@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="bar">
+        <div class="bar-inner">
+          <button class="button" id="<%= htmlWebpackPlugin.options.buttonId %>">
+            Load App
+          </button>
+          <div class="bar-info">
+            <span>Lat:&nbsp;</span>
+            <span id="lat">
+
+            </span>
+            &nbsp;&nbsp;
+            <span>Long:&nbsp;</span>
+            <span id="long">
+
+            </span>
+            <div class="separator-left">
+            </div>
+            <div class="temp-area">
+              <div class="temp max">
+                <span id="max_temp">
+                
+                </span>
+                &#x25B4;</div>
+              <div class="temp min">
+                <span id="min_temp">
+
+                </span>
+              &#x25BC;</div>
+            </div>
+            <div class="separator-left"></div>
+            <span>Last Time update:</span>
+            &nbsp;
+            <span id="last_update_time">
+
+            </span>
+          </div>
+        </div>
+    </div>  
+    <div class="app-placeholder">
+      <iframe id="<%= htmlWebpackPlugin.options.appPlaceholderId %>" src="<%= htmlWebpackPlugin.options.remoteAppUrl %>" class="app">
+  
+      </iframe>
+    </div>
+  </body>
+</html>
