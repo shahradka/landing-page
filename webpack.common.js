@@ -2,8 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require("dotenv-webpack");
 require('dotenv').config();
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
 
 module.exports = {
     entry: './src/index.js',
@@ -35,11 +33,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+          filename: path.resolve(__dirname, "dist/index.html"),
           title:"landing page",
           buttonId: process.env.LOAD_BUTTON_ID,
           appPlaceholderId: process.env.APP_PLACEHOLDER_ID,
           remoteAppUrl: process.env.REMOTE_APP_URL,
-          template: 'src/templates/index.html',
+          template:  path.resolve(__dirname, "public/index.html"),
         }),
         new Dotenv({
           path: './.env',

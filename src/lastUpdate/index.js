@@ -19,7 +19,6 @@ const resetLastUpdate = () => {
 
     if(_interval)
     {
-        console.log("clear interval")
         clearInterval(_interval);
     }
 }
